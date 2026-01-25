@@ -2,15 +2,14 @@
 #+DESCRIPTION: Gnus-style scoring for Elfeed
 #+AUTHOR: Michael Herstine
 #+EMAIL: sp1ff@pobox.com
-#+DATE: <2025-10-08 Wed 15:33>
+#+DATE: <2026-01-25 Sun 11:29>
 #+AUTODATE: t
 #+OPTIONS: toc:nil org-md-headline-style:setext *:t ^:nil
 #+STARTUP: overview
 
 [[https://melpa.org/#/elfeed-score][file:https://melpa.org/packages/elfeed-score-badge.svg]]
 [[https://stable.melpa.org/#/elfeed-score][file:https://stable.melpa.org/packages/elfeed-score-badge.svg]]
-[[https://github.com/sp1ff/elfeed-score/workflows/melpazoid/badge.svg][file:https://github.com/sp1ff/elfeed-score/workflows/melpazoid/badge.svg]]
-
+[[https://github.com/sp1ff/elfeed-score/actions/workflows/melpazoid.yml/badge.svg][file:https://github.com/sp1ff/elfeed-score/actions/workflows/melpazoid.yml/badge.svg]]
 
 * Introduction
 
