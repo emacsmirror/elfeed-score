@@ -1,4 +1,20 @@
-2025-10-11  Michael Herstine  <sp1ff@pobox.com>
+2026-01-25  Michael Herstine  <sp1ff@pobox.com>
+
+	Cut release 1.2.11
+
+	Update `configure-to-distcheck`.
+	Add a workaround to elfeed issue #553; use the system emacs.
+
+	Fix the melpazoid badge
+
+	Add a retry to my Gnu download in the CI Github Action.
+
+	Use my patched version of elfeed for CI.
+	This is a temporary workaround to elfeed issue 553.
+
+	Update copyright statements throughout
+
+2025-10-12  Michael Herstine  <sp1ff@pobox.com>
 
 	prep merge
 
