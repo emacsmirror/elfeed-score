@@ -5,20 +5,28 @@
 
 set -x
 
-if [ test -d elfeed ]; then
+if test -d elfeed; then
     set -e
     cd elfeed
     git pull
-    git checkout master
+    # Workaround https://github.com/skeeto/elfeed/issues/553
+    # git checkout master
+    git checkout issue-553
     cd ..
     set +e
 else
-    git clone https://github.com/skeeto/elfeed.git
+    # Workaround https://github.com/skeeto/elfeed/issues/553
+    # git clone https://github.com/skeeto/elfeed.git
+    git clone https://github.com/sp1ff/elfeed.git
+    cd elfeed
+    git checkout issue-553
+    cd ..
 fi
 
 # Configure the source tree, build it, test it, and test the distribution tarballs
 make distclean
 
+export EMACS=/usr/bin/emacs
 export EMACSLOADPATH=$(pwd):$(pwd)/elfeed:$(pwd)/elfeed/tests:$(ls -d /usr/share/emacs/3*)/lisp
 
 ./bootstrap || exit 1
