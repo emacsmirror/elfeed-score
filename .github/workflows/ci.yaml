@@ -42,7 +42,10 @@ jobs:
           sudo apt-get install -y autoconf automake texlive emacs
           echo "EMACSLOADPATH=$(pwd):$(pwd)/elfeed:$(pwd)/elfeed/tests:$(ls -d /usr/share/emacs/2*)/lisp" >> $GITHUB_ENV
           echo "Will now use the emacs at $(type -p emacs): $(emacs --version|head -n1)"
-          git clone https://github.com/skeeto/elfeed.git
+          # Work around https://github.com/skeeto/elfeed/issues/553
+          # git clone https://github.com/skeeto/elfeed.git
+          git clone https://github.com/sp1ff/elfeed.git
+          cd elfeed && git checkout issue-553
 
       - name: Install least version of Emacs supported by elfeed-score
         if: matrix.os == 'ubuntu-20.04'
