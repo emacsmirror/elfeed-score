@@ -11,6 +11,7 @@ TESTS = elfeed-score-tests \
 	test-tag-rules	   \
         test-explanations  \
 	test-stats	   \
+	test-stats-writes  \
 	smoke-test
 
 dist_noinst_LISP = elfeed-score-tests.el \
@@ -24,6 +25,7 @@ dist_noinst_LISP = elfeed-score-tests.el \
 		   test-tag-rules.el	 \
                    test-explanations.el  \
 		   test-stats.el	 \
+		   test-stats-writes.el  \
 		   smoke-test.el         \
 		   smoke-test-core.el    \
 		   package-test.el	 \
