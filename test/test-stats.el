@@ -146,6 +146,30 @@ permissions, they should be created automatically."
       (should (file-exists-p stats-file)))
     (elfeed-score-serde-cleanup-stats)))
 
+(ert-deftest test-issue-38 ()
+  "Regression test against elfeed-score issue #38.
+
+Verify that we can deserialize stats written when
+`elfeed-score-rule-stats-pretty-print' is nil."
+
+  ;; Whip-up a few rules...
+  (let ((r1 (elfeed-score-title-rule--create
+             :text "Bar" :value 1 :type 's))
+        (r2 (elfeed-score-feed-rule--create
+             :text "feed" :value 1 :type 's :attr 't)))
+    ;; & generate some stats for 'em.
+    (elfeed-score-rule-stats-on-match r1)
+    (elfeed-score-rule-stats-on-match r2)
+    (should (eq 2 (hash-table-count elfeed-score-rule-stats--table)))
+    ;; and send 'em to a target file whose parent directories don't exist (yet)
+    (let ((stats-file (make-temp-file "iss-38-" nil)))
+      (let ((elfeed-score-rule-stats-pretty-print nil))
+        (elfeed-score-rule-stats-write stats-file)
+        (should (file-exists-p stats-file)))
+      (elfeed-score-rule-stats-read stats-file)
+      (should (hash-table-p elfeed-score-rule-stats--table)))
+    (elfeed-score-serde-cleanup-stats)))
+
 (provide 'test-stats)
 
 ;;; test-stats.el ends here.

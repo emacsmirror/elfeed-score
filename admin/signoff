@@ -25,9 +25,9 @@ if [ -n "$(git status --porcelain)" ]; then
     exit 1
 fi
 
-announce "Attempting sign-off on ob-coq $SHA." $GREEN
+announce "Attempting sign-off on elfeed-score $SHA." $GREEN
 
 run "admin/run-linters"
 run "admin/configure-to-distcheck"
 
-announce "Signed off on ob-coq $SHA in $SECONDS seconds 🍻" $GREEN
+announce "Signed off on elfeed-score $SHA in $SECONDS seconds 🍻" $GREEN
