@@ -242,7 +242,8 @@ This implementation is derived from `elfeed-search-print-entry--default'."
 
 ;;;###autoload
 (defun elfeed-score-enable (&optional arg depth)
-  "Enable `elfeed-score'.  With prefix ARG do not install a custom sort function.
+  "Enable `elfeed-score'.
+With prefix ARG do not install a custom sort function.
 
 Add the score function at DEPTH (default 0)."
 
