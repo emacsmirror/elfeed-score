@@ -1,4 +1,4 @@
 @set UPDATED 25 January 2026
 @set UPDATED-MONTH January 2026
-@set EDITION 1.2.11
-@set VERSION 1.2.11
+@set EDITION 1.2.12
+@set VERSION 1.2.12

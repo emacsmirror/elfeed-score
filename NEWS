@@ -2,6 +2,11 @@ elfeed-score News -- history of user-visible changes -*- outline -*-
 
 * elfeed-score 1.2
 
+** changes in elfeed-score 1.2.12
+
+*** fix issue 038 "Saving stats is slow after months of usage"
+
+Add configuration item `elfeed-score-rule-stats-pretty-print' allowing the user to turn-off the use of pretty-printing stats to disk.
 ** changes in elfeed-score 1.2.11
 
 No user-visible changes (hygienic updates only).

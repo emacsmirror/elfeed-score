@@ -1,3 +1,22 @@
+2026-04-18  Michael Herstine  <sp1ff@pobox.com>
+
+	Cut release 1.2.12.
+	This patch updates `NEWS` with this release's changes, and updates the
+	version in the usual places.
+
+	Appease the linter.
+
+	Update the CI workflow to run the linters under `admin`.
+
+	Make the print function for rules stats configurable.
+	This patch introduces a new customization variable
+	`elfeed-score-rule-stats-pretty-print`; if `t`, continue to use
+	`pp-to-string`. Otherwise, use `prin1`.
+
+2026-04-17  Michael Herstine  <sp1ff@pobox.com>
+
+	Add test `test-stats-writes'.
+
 2026-01-25  Michael Herstine  <sp1ff@pobox.com>
 
 	Cut release 1.2.11
