@@ -47,6 +47,7 @@ jobs:
           git clone https://github.com/sp1ff/elfeed.git
           cd elfeed && git checkout issue-553
 
+      # This would be cool, but unfortunately, emacs 26.1 won't build on Ubuntu 22.04 due to the `SIGSTKSZ` issue
       - name: Install least version of Emacs supported by elfeed-score
         if: matrix.os == 'ubuntu-20.04'
         shell: bash
@@ -108,6 +109,12 @@ jobs:
           export version=`awk '/^AC_INIT/ {print substr($2, 2, length($2)-3)}' configure.ac`
           echo "ELFEED_SCORE_VERSION=${version}" >> $GITHUB_ENV
           echo "version is ${{ env.ELFEED_SCORE_VERSION }}"
+
+      - name: Run Linters
+        shell: bash
+        run: |
+          set -ex
+          admin/run-linters
 
       - name: Configure & make
         shell: bash
